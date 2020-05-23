@@ -1,7 +1,8 @@
 'use strict';
 
 {
-  document.querySelector('button').addEventListener('click', () => {
+  document.addEventListener('keydown', e => {
+    if (e.keyCode === 13) {
     // 入力内容を取得
     const text = document.querySelector('input');
 
@@ -34,6 +35,8 @@
 
     // inputの中身を空にする
     text.value = '';
+
+  }
 
     input.addEventListener('click', () => {
       if (li.classList.contains('hidden') === false) {
