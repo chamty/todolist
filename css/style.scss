@@ -25,6 +25,7 @@ body {
 }
 
 #submit {
+  font-weight: bold;
   margin: 0 10px;
   padding: 5px 20px;
   border: none;
@@ -44,27 +45,53 @@ body {
   border-bottom: none;
 }
 
-#flex {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 420px;
-  margin: 10px;
+#tasks, #comps {
+  text-align: left;
+  margin: 30px;
 }
 
-#todos {
+#task, #comp {
+  background: pink;
+  display: inline-block;
+  padding: 5px 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #333;
+}
+
+#todos, #complete {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.todo {
-  width: 390px;
+.todo, .comptodo {
+  width: 400px;
   box-sizing: border-box;
-  margin: 0;
-  padding: 10px;
+  margin: 0 auto;
+  padding: 7px 0 7px 40px;
   border: 1px solid #CCCCCC;
   text-align: left;
   position: relative;
+}
+
+.checkbox {
+  position: absolute;
+  top: 30%;
+  left: 10px;
+  margin: 0 10px 0 5px;
+}
+
+.delete {
+  position: absolute;
+  top: 20%;
+  right: 8px;
+  text-align: right;
+  border: none;
+  padding: 10px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
 }
 
 .todo::after {
@@ -76,9 +103,5 @@ body {
   position: absolute;
   top: 20%;
   right: 10px;
-}
-
-.checkBox {
-  visibility: hidden;
-  margin: 50px 0px;
+  z-index: 0;
 }
