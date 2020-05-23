@@ -1,20 +1,24 @@
 'use strict';
 
 {
-  document.querySelector('button').addEventListener('click', () => {
-    // inputを取得
+  document.querySelector('button').addEventListener('click || keydown', e => {
+    if (e.key === 13) {
+    // 入力内容を取得
     const text = document.querySelector('input');
 
-    // inputの中身が空だったらliを追加しない
+    // 入力が空だったらliを追加しない
     if (text.value === '') {
       return;
     }
 
+    // ゴミ箱を作成
+    const garbage = document.createElement('button');
+    garbage.classList.add('delete');
+    // チェックボックスを作成
+    const input = document.createElement('input');
+    input.setAttribute('type','checkbox');
+    input.classList.add('checkbox');
     // liを作成
-    const flex = document.getElementById('flex');
-    const check = document.createElement('input');
-    check.setAttribute('type','checkbox');
-    check.classList.add('checkbox');
     const li = document.createElement('li');
     li.classList.add('todo');
 
@@ -22,21 +26,32 @@
     li.textContent = text.value;
 
     // ulを取得、liを子要素に追加
-    document.querySelector('#flex').appendChild(check);
-    document.querySelector('#flex').appendChild(li);
+    // liにチェックボックスを追加
+    // inputにゴミ箱を追加
+    document.querySelector('ul').appendChild(li);
+    document.querySelector('ul > li:last-child').appendChild(input);
+    document.querySelector('ul > li:last-child').appendChild(garbage);
+    const comp = document.getElementById('complete');
 
     // inputの中身を空にする
     text.value = '';
-
-  })
-
-  var delate = document.createElement('button');
-  delate.addEventListener('click', () => {
-    delateTodo(index);
-  })
-
-  function delateTodo(index) {
-    li.splice(index,1);
   }
+
+    input.addEventListener('click', () => {
+      if (li.classList.contains('hidden') === false) {
+        li.classList.toggle('hidden');
+        li.style.opacity = 0.3;
+        comp.appendChild(li);
+      } else {
+        li.classList.remove('hidden');
+        li.style.opacity = 1;
+        document.querySelector('ul').appendChild(li);
+      }
+    })
+
+    garbage.addEventListener('click', () => {
+      li.remove();
+    })
+  })
 
 }
