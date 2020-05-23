@@ -1,0 +1,91 @@
+body {
+  background: #DAE0E6;
+  font-family: 'Montserrat', 'M PLUS Rounded 1c', sans-serif;
+}
+
+.container {
+  width: 450px;
+  margin: 10px auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+#title {
+  text-align: center;
+  letter-spacing: 2.5px;
+}
+
+#register {
+  width: 250px;
+  height: 30px;
+  margin-bottom: 20px;
+  border-color: #CCCCCC;
+}
+
+#submit {
+  margin: 0 10px;
+  padding: 5px 20px;
+  border: none;
+  background: #00AEEF;
+  border-bottom: solid 3px #004B66;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#submit:focus {
+  outline: 0;
+}
+
+#submit:active {
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+  border-bottom: none;
+}
+
+#flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 420px;
+  margin: 10px;
+}
+
+#todos {
+  list-style: none;
+  padding: 0;
+}
+
+.todo {
+  width: 390px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #CCCCCC;
+  text-align: left;
+  position: relative;
+}
+
+.todo::after {
+  font-family: "Font Awesome 5 Free";
+  font-size: 18px;
+  content: '\f2ed';
+  color: #FF922B;
+  text-align: right;
+  position: absolute;
+  top: 20%;
+  right: 10px;
+}
+
+.checkBox {
+  visibility: hidden;
+  margin: 50px 0px;
+}
+/*# sourceMappingURL=style.css.map */
