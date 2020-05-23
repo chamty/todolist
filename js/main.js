@@ -48,11 +48,11 @@
         li.style.opacity = 1;
         document.querySelector('ul').appendChild(li);
       }
-    })
+    });
 
     garbage.addEventListener('click', () => {
       li.remove();
-    })
-  })
+    });
+  });
 
 }
